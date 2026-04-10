@@ -96,11 +96,14 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-5">
-      <div className="flex items-center justify-between">
-        <p className="text-sm text-slate-500">Here's your financial summary for this month</p>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div>
+          <h2 className="text-base font-semibold text-slate-800">Dashboard</h2>
+          <p className="text-xs text-slate-400 mt-0.5">Your financial summary for this month</p>
+        </div>
         <button
           onClick={() => setShowModal(true)}
-          className="flex items-center gap-1.5 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors"
+          className="flex items-center justify-center gap-1.5 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition-colors w-full sm:w-auto"
         >
           <Plus size={16} /> Add Transaction
         </button>
