@@ -170,10 +170,13 @@ export function Header() {
       <nav className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between px-4">
         <div className="flex items-center gap-5">
           <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="w-7 h-7 bg-primary rounded-lg flex items-center justify-center">
-              <TrendingUp size={14} className="text-primary-foreground" />
+            <div className="w-8 h-8 rounded-xl flex items-center justify-center shadow-sm"
+              style={{ background: 'linear-gradient(135deg, #14b8a6 0%, #6366f1 100%)' }}>
+              <TrendingUp size={15} className="text-white" strokeWidth={2.5} />
             </div>
-            <span className="brand-font text-xl text-foreground">SmartExpense</span>
+            <span className="text-xl font-bold tracking-tight">
+              <span className="text-foreground">Smart</span><span className="text-primary">Expense</span>
+            </span>
           </a>
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
@@ -225,8 +228,8 @@ export function Header() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuLink className="px-4" asChild>
-                <a href="#pricing" className="hover:bg-accent rounded-md p-2 text-sm">
-                  Pricing
+                <a href="#features" className="hover:bg-accent rounded-md p-2 text-sm">
+                  Features
                 </a>
               </NavigationMenuLink>
             </NavigationMenuList>

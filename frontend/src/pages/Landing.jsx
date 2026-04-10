@@ -11,7 +11,6 @@ import {
   Download,
   TrendingUp,
   ArrowRightIcon,
-  CheckIcon,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -48,40 +47,6 @@ const features = [
   },
 ]
 
-const pricingPlans = [
-  {
-    name: 'Free',
-    price: '₹0',
-    period: 'forever',
-    description: 'Perfect for individuals getting started',
-    features: [
-      'Up to 50 transactions/month',
-      'Basic expense categories',
-      'Monthly overview dashboard',
-      'CSV export',
-    ],
-    cta: 'Get Started Free',
-    href: '/register',
-    highlighted: false,
-  },
-  {
-    name: 'Pro',
-    price: '₹199',
-    period: 'per month',
-    description: 'For serious money managers',
-    features: [
-      'Unlimited transactions',
-      'AI-powered smart insights',
-      'Budget alerts & goals',
-      'Advanced charts & analytics',
-      'Priority support',
-      'All export formats',
-    ],
-    cta: 'Start Pro Trial',
-    href: '/register',
-    highlighted: true,
-  },
-]
 
 export default function Landing() {
   return (
@@ -120,70 +85,6 @@ export default function Landing() {
           </div>
         </section>
 
-        {/* Divider */}
-        <div className="border-t border-border mx-4" />
-
-        {/* Pricing Section */}
-        <section id="pricing" className="mx-auto w-full max-w-5xl px-4 py-24">
-          <div className="text-center mb-12">
-            <p className="text-primary text-sm font-semibold uppercase tracking-wider mb-3">Pricing</p>
-            <h2 className="text-3xl md:text-4xl font-medium text-foreground mb-4">
-              Simple, transparent pricing
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Start free, upgrade when you need more power.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {pricingPlans.map((plan) => (
-              <div
-                key={plan.name}
-                className={cn(
-                  'rounded-xl border p-8 flex flex-col',
-                  plan.highlighted
-                    ? 'bg-primary text-primary-foreground border-primary shadow-xl shadow-primary/20 scale-[1.02]'
-                    : 'bg-card text-card-foreground shadow-sm',
-                )}
-              >
-                <div className="mb-6">
-                  <p className={cn('text-sm font-semibold uppercase tracking-wider mb-2', plan.highlighted ? 'text-primary-foreground/70' : 'text-muted-foreground')}>
-                    {plan.name}
-                  </p>
-                  <div className="flex items-baseline gap-1 mb-1">
-                    <span className="text-4xl font-bold">{plan.price}</span>
-                    <span className={cn('text-sm', plan.highlighted ? 'text-primary-foreground/70' : 'text-muted-foreground')}>
-                      /{plan.period}
-                    </span>
-                  </div>
-                  <p className={cn('text-sm', plan.highlighted ? 'text-primary-foreground/80' : 'text-muted-foreground')}>
-                    {plan.description}
-                  </p>
-                </div>
-
-                <ul className="space-y-3 mb-8 flex-1">
-                  {plan.features.map((feat) => (
-                    <li key={feat} className="flex items-center gap-2 text-sm">
-                      <CheckIcon className={cn('size-4 flex-shrink-0', plan.highlighted ? 'text-primary-foreground' : 'text-primary')} />
-                      {feat}
-                    </li>
-                  ))}
-                </ul>
-
-                <Button
-                  variant={plan.highlighted ? 'secondary' : 'default'}
-                  className="w-full"
-                  asChild
-                >
-                  <Link to={plan.href}>
-                    {plan.cta} <ArrowRightIcon className="size-4 ml-2" />
-                  </Link>
-                </Button>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* CTA Banner */}
         <section className="mx-auto w-full max-w-5xl px-4 pb-24">
           <div className="rounded-2xl bg-primary/5 border border-primary/20 p-12 text-center">
@@ -214,10 +115,13 @@ export default function Landing() {
       <footer className="border-t border-border bg-card">
         <div className="mx-auto w-full max-w-5xl px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-primary rounded-md flex items-center justify-center">
-              <TrendingUp size={12} className="text-primary-foreground" />
+            <div className="w-7 h-7 rounded-xl flex items-center justify-center shadow-sm"
+              style={{ background: 'linear-gradient(135deg, #14b8a6 0%, #6366f1 100%)' }}>
+              <TrendingUp size={13} className="text-white" strokeWidth={2.5} />
             </div>
-            <span className="brand-font text-lg text-foreground">SmartExpense</span>
+            <span className="text-lg font-bold tracking-tight">
+              <span className="text-foreground">Smart</span><span className="text-primary">Expense</span>
+            </span>
           </div>
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} SmartExpense · Track smarter. Save better.
