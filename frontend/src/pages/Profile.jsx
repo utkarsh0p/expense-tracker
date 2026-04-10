@@ -177,7 +177,6 @@ export default function Profile() {
           SmartExpense helps you track your income and expenses with automated insights. Log your transactions,
           visualize your spending patterns, and get personalized tips to improve your financial habits.
         </p>
-        <p className="text-xs text-slate-400 mt-3">Built with React · Node.js · MongoDB</p>
       </div>
 
       <ChangePasswordModal
