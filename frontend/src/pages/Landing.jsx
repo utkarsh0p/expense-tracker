@@ -2,17 +2,9 @@ import { Header } from '@/components/ui/header-3'
 import { HeroSection } from '@/components/ui/hero-3'
 import { Link } from 'react-router-dom'
 import { Button } from '@/components/ui/button'
-import {
-  BarChart3,
-  PieChart,
-  Wallet,
-  BellRing,
-  Tags,
-  Download,
-  TrendingUp,
-  ArrowRightIcon,
-} from 'lucide-react'
+import { BarChart3, PieChart, Wallet, BellRing, Tags, Download, ArrowRightIcon, TrendingUp } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Logo from '@/components/Logo'
 
 const features = [
   {
@@ -114,15 +106,7 @@ export default function Landing() {
       {/* Footer */}
       <footer className="border-t border-border bg-card">
         <div className="mx-auto w-full max-w-5xl px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-xl flex items-center justify-center shadow-sm"
-              style={{ background: 'linear-gradient(135deg, #14b8a6 0%, #6366f1 100%)' }}>
-              <TrendingUp size={13} className="text-white" strokeWidth={2.5} />
-            </div>
-            <span className="text-lg font-bold tracking-tight">
-              <span className="text-foreground">Smart</span><span className="text-primary">Expense</span>
-            </span>
-          </div>
+          <Logo size="sm" />
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} SmartExpense · Track smarter. Save better.
           </p>

@@ -24,8 +24,8 @@ import {
   FileText,
   Shield,
   HelpCircle,
-  TrendingUp,
 } from 'lucide-react'
+import Logo from '@/components/Logo'
 
 const productLinks = [
   {
@@ -169,14 +169,8 @@ export function Header() {
     >
       <nav className="mx-auto flex h-14 w-full max-w-5xl items-center justify-between px-4">
         <div className="flex items-center gap-5">
-          <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <div className="w-8 h-8 rounded-xl flex items-center justify-center shadow-sm"
-              style={{ background: 'linear-gradient(135deg, #14b8a6 0%, #6366f1 100%)' }}>
-              <TrendingUp size={15} className="text-white" strokeWidth={2.5} />
-            </div>
-            <span className="text-xl font-bold tracking-tight">
-              <span className="text-foreground">Smart</span><span className="text-primary">Expense</span>
-            </span>
+          <a href="/" className="hover:opacity-80 transition-opacity">
+            <Logo size="md" />
           </a>
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>

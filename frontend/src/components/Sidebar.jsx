@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { LayoutDashboard, TrendingUp, TrendingDown, User, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import Logo from './Logo.jsx'
 
 const MENU = [
   { label: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
@@ -29,19 +30,8 @@ export default function Sidebar({ isOpen, onClose, collapsed, onToggleCollapse }
         `}
       >
         <div className={`flex items-center h-16 px-4 border-b border-slate-700/50 ${collapsed ? 'md:justify-center' : 'justify-between'}`}>
-          {!collapsed && (
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 bg-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                <TrendingUp size={14} className="text-white" />
-              </div>
-              <span className="brand-font text-xl text-white">SmartExpense</span>
-            </div>
-          )}
-          {collapsed && (
-            <div className="w-7 h-7 bg-teal-600 rounded-lg flex items-center justify-center">
-              <TrendingUp size={14} className="text-white" />
-            </div>
-          )}
+          {!collapsed && <Logo size="md" dark />}
+          {collapsed && <Logo size="sm" iconOnly />}
           <button
             onClick={onClose}
             className="md:hidden text-slate-400 hover:text-white p-1"

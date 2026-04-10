@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Eye, EyeOff, TrendingUp } from 'lucide-react'
+import { Eye, EyeOff } from 'lucide-react'
+import Logo from '../components/Logo.jsx'
 import api from '../utils/api.js'
 import { useAuth } from '../context/AuthContext.jsx'
 
@@ -52,12 +53,7 @@ export default function Register() {
     <div className="min-h-screen flex items-center justify-center bg-slate-100 px-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
         <div className="flex flex-col items-center mb-8">
-          <div className="flex items-center gap-2 mb-2">
-            <div className="w-9 h-9 bg-teal-600 rounded-xl flex items-center justify-center">
-              <TrendingUp size={18} className="text-white" />
-            </div>
-            <span className="brand-font text-3xl text-slate-800">SmartExpense</span>
-          </div>
+          <Logo size="lg" />
           <p className="text-slate-500 text-sm">Track smarter. Save better.</p>
         </div>
 
@@ -77,7 +73,7 @@ export default function Register() {
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="Utkarsh Singh"
+              placeholder="John Doe"
               className="w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
               autoComplete="name"
             />
